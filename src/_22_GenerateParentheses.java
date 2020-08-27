@@ -1,7 +1,7 @@
 /**
  * 22. 括号生成 [中等, 回溯算法]
  * 数字 n 代表生成括号的对数，请你设计一个函数，用于能够生成所有可能的并且 有效的 括号组合。
- * <p>
+ *
  * 示例：
  * 输入：n = 3
  * 输出：[
@@ -24,7 +24,8 @@ public class _22_GenerateParentheses {
     }
 
     /**
-     * 解题思路：通过递归
+     * 解题思路：递归插入左右括号
+     * 1. 
      * */
     public static List<String> generateParenthesis(int n) {
         List<String> result = new ArrayList<String>();
