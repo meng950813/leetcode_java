@@ -37,13 +37,14 @@ public class _39_CombinationSum {
     public static void main(String[] args) {
         int[] input = new int[]{2, 5, 3};
         List<List<Integer>> result = combinationSum(input, 8);
-        for (List<Integer> item : result){
-            for (Integer i : item){
+        for (List<Integer> item : result) {
+            for (Integer i : item) {
                 System.out.print(i + ",");
             }
             System.out.println();
         }
     }
+
     /**
      * 解题思路：
      * 1. 先对数组排序， 以减少回溯次数
@@ -62,12 +63,18 @@ public class _39_CombinationSum {
             result.add(new ArrayList<>(valid));
             return;
         }
+
+        // 遍历可能的搜索起点
         for (int i = begin; i < candidates.length; i++) {
+            // 基于数组有序，减少无效递归
             if (target < candidates[i]) {
                 break;
             }
+            // 加入当前数
             valid.add(candidates[i]);
+            // 注意此处与 70 题的不同，由于数字可重复使用，因此下一轮搜索还是从当前节点开始
             dfs(result, valid, candidates, target - candidates[i], i);
+            // 不选择当前数， 寻找其他可能性
             valid.remove(valid.size() - 1);
         }
     }
