@@ -17,7 +17,7 @@
 
 import java.util.*;
 
-public class _70_Combinations {
+public class _77_Combinations {
     public static void main(String[] args) {
         int n = 4, k = 2;
         List<List<Integer>> result = combine(n, k);
