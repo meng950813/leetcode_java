@@ -24,7 +24,7 @@ package leetcode;
 import java.util.*;
 public class _117_PopulatingNextRightPointersInEachNodeII {
     public static void main(String[] args) {
-
+        
     }
 
     /**
@@ -37,26 +37,20 @@ public class _117_PopulatingNextRightPointersInEachNodeII {
         Queue<Node> queue = new LinkedList<>();
         queue.offer(root);
         while (!queue.isEmpty()){
-            Node pre = queue.poll(), next = null;
+            Node pre = null, next = null;
             int size = queue.size();
             for (int i = 0; i < size; i++){
-                if (pre.left != null){
-                    queue.offer(pre.left);
-                }
-                if (pre.right != null){
-                    queue.offer(pre.right);
-                }
-
                 next = queue.poll();
-                pre.next = next;
+                if (next.left != null){
+                    queue.offer(next.left);
+                }
+                if (next.right != null){
+                    queue.offer(next.right);
+                }
+                if (i != 0){
+                    pre.next = next;
+                }
                 pre = next;
-            }
-            pre.next = null;
-            if (pre.left != null){
-                queue.offer(pre.left);
-            }
-            if (pre.right != null){
-                queue.offer(pre.right);
             }
         }
         return root;
