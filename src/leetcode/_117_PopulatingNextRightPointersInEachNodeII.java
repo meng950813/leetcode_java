@@ -24,7 +24,7 @@ package leetcode;
 import java.util.*;
 public class _117_PopulatingNextRightPointersInEachNodeII {
     public static void main(String[] args) {
-        
+
     }
 
     /**
