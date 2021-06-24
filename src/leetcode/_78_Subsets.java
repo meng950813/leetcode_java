@@ -9,34 +9,42 @@ package src.leetcode;
  * 输入: nums = [1,2,3]
  * 输出:
  * [
- *   [3],
- *   [1],
- *   [2],
- *   [1,2,3],
- *   [1,3],
- *   [2,3],
- *   [1,2],
- *   []
+ *  [3],
+ *  [1],
+ *  [2],
+ *  [1,2,3],
+ *  [1,3],
+ *  [2,3],
+ *  [1,2],
+ *  []
  * ]
- * */
+ */
 
+import java.lang.reflect.Array;
 import java.util.*;
 public class _78_Subsets {
     public static void main(String[] args) {
-
+        int[] nums = new int[]{1,2,3};
+        List<List<Integer>> result = subsets(nums);
+        for (List<Integer> list: result){
+            for (Integer item: list){
+                System.out.print(item + ",");
+            }
+            System.out.println();
+        }
     }
 
     public static List<List<Integer>> subsets(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
-        List<Integer> path = null;
-
         result.add(new ArrayList<>());
+
         int len = nums.length, i = 0, j = 0;
         for (i = 0; i < len; i++){
-            path = new ArrayList<>();
-            for (j = i; j < len; j++){
-                path.add(nums[j]);
-                result.add(new ArrayList<>(path));
+            int size = result.size();
+            for (j = 0; j < size; j++){
+                List<Integer> path = new ArrayList<>(result.get(j));
+                path.add(nums[i]);
+                result.add(path);
             }
         }
         return result;
