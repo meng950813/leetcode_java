@@ -1,4 +1,4 @@
-package leetcode;
+package src.leetcode;
 
 /**
  * 2. 两数相加 [中等]
