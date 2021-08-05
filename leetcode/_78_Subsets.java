@@ -1,4 +1,4 @@
-package src.leetcode;
+package leetcode;
 
 /**
  * 78. 子集 [中等， 回溯算法]
@@ -20,7 +20,6 @@ package src.leetcode;
  * ]
  */
 
-import java.lang.reflect.Array;
 import java.util.*;
 public class _78_Subsets {
     public static void main(String[] args) {
