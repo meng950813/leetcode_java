@@ -1,7 +1,5 @@
 package leetcode;
 
-import java.util.Arrays;
-
 /**
  * 313. 超级丑数 [中等，哈希表，动态规划，数学，堆（优先队列）]
  * 超级丑数 是一个正整数，并满足其所有质因数都出现在质数数组 primes 中。
